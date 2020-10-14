@@ -46,6 +46,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var buttons: [UIButton]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -57,7 +59,12 @@ class ViewController: UIViewController {
         // how do we know ehich button was pressed?
         // 2 ways
         // use the tag property of UIView
-        print(sender.tag)
+        print("tag: \(sender.tag)")
+        
+        // use an outlet collection
+        if let senderIndex = buttons.firstIndex(of: sender) {
+            print("sender index: \(senderIndex)")
+        }
     }
     
 }
